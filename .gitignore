@@ -1,0 +1,27 @@
+# Ignore all .env files anywhere in the project
+*.env
+
+# Ignore Python cache directories (works recursively)
+*/__pycache__/
+*.py[cod]
+*.pytest_cache/
+*.ipynb_checkpoints/
+
+# Ignore pytest cache directory
+*.pytest_cache/
+
+# Optional: ignore VS Code and other editor settings
+*.vscode/
+*.swp
+
+
+#Other stuff 
+notebooks/ResearchRunner.ipynb
+notebooks/sbert.ipynb
+notebooks/sbert.py
+notebooks/hdbscan.ipynb
+
+myEnv/
+
+notebooks/
+datasets/
