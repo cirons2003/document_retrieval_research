@@ -25,11 +25,52 @@ To run an experiment:
 
 ## Agent Prototypes
 ```python
-i = []
+## Chunking agents implement segmentation step
+class ChunkingAgent(Protocol):
+    name: str
+
+    ## Extract semantic components from text
+    def chunk(self, raw_text: str) -> list[str]:
+
+## Embedding agents implement the representation step
+class EmbeddingAgent(Protocol):
+    name: str
+
+    ## Generate a text embedding for a semantic component
+    def embed(self, raw_text: list[str]) -> list[list[float]]:
+        ...
+
+## Clustering agents implement the topic reduction step
+class ClusteringAgent(Protocol):
+    name: str
+    
+    ## Pass the embeddings object (used by pipeline to access embeddings table
+    def pass_embeddings(self, embeddings: Embeddings):
+        ...
+    ## Learn topics, pass_embeddings must have been called previously
+    def train(embeddings: list[list[float]]):
+        ...
+    ## Get sparse vector representation for component embeddings 
+    def generate_result(self, person_embeddings: list[list[float]]) -> list[int]:
+        ...
+    # Classify an embedding into a topic
+    def topic_map(embedding: list[float]) -> int:
+        ...
+    ## True if train has been called previously 
+    def is_finished_training() -> bool:
+        ...
 ```
 
 ## Sample Usage 
-![]()
+```python
+sentenceChunker = SentenceChunkingAgent()
+sbert = SBERTEmbeddingAgent(device=device)
+kmeans = KMeansClusteringAgent(200)
+
+rr = ResearchRunner('test_db', 'sentence_sbert_kmeans_100', sentenceChunker, sbert, kmeans)
+```
+
+
 
 ## Full Thesis 
 [[![Download Thesis](https://img.shields.io/badge/View-PDF-blue)](https://github.com/cirons2003/document_retrieval_research/blob/master/thesis.pdf)]
