@@ -30,7 +30,7 @@ To run an experiment:
 ![]()
 
 ## Full Thesis 
-[[![Download Thesis](https://img.shields.io/badge/View-PDF-blue)](https://github.com/cirons2003/document_retrieval_research/blob/master/thesis.pdf)](https://github.com/cirons2003/document_retrieval_research/blob/master/thesis.pdf)
+[[![Download Thesis](https://img.shields.io/badge/View-PDF-blue)](https://github.com/cirons2003/document_retrieval_research/blob/master/thesis.pdf)]
 
 
 
