@@ -70,6 +70,8 @@ kmeans = KMeansClusteringAgent(200)
 rr = ResearchRunner('test_db', 'sentence_sbert_kmeans_100', sentenceChunker, sbert, kmeans)
 ```
 
+[!ResearchRunner Screenshot](https://github.com/cirons2003/document_retrieval_research/blob/master/unnamed.png)
+
 
 
 ## Full Thesis 
