@@ -24,7 +24,9 @@ To run an experiment:
 8) Once trained, call query() on ResearchRunner to get the document ids of top results
 
 ## Agent Prototypes
-![]()
+```python
+i = []
+```
 
 ## Sample Usage 
 ![]()
